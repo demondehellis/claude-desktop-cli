@@ -30,6 +30,11 @@ def parse_arguments():
         help="Get the content of the artifact panel"
     )
 
+    # Delay settings
+    parser.add_argument("--delay", type=int, default=20,
+        help="Delay in milliseconds for typing (default: 20)"
+    )
+
     # Response handling
     parser.add_argument("--timeout", type=int,
         help="Timeout in seconds for response (use 0 to disable waiting)"

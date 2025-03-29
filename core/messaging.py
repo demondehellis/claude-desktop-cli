@@ -17,13 +17,13 @@ def start_new_chat(page):
     button = page.locator(selector("new-chat"))
     button.press("Enter")
 
-def send_message(page, message):
+def send_message(page, message, delay=20):
     """Send a message to Claude."""
     textarea = page.locator(selector("input"))
     textarea.click()
-    textarea.fill(message)
-    textarea.press("Enter")
-    page.locator(selector("stop")).wait_for()
+    textarea.fill("")
+    textarea.type(message, delay=delay)
+    textarea.press("Control+Enter")
 
 
 def wait_until_ready(page, timeout=None, always_allow=False):

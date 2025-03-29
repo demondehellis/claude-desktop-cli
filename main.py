@@ -43,7 +43,7 @@ def main():
 
         # Send message if provided
         if args.message:
-            send_message(page, args.message)
+            send_message(page, args.message, args.delay)
 
         # Wait for Claude to finish processing
         wait_until_ready(page, args.timeout, args.always_allow)
