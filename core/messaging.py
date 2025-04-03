@@ -21,8 +21,7 @@ def send_message(page, message, delay=20):
     """Send a message to Claude."""
     textarea = page.locator(selector("input"))
     textarea.click()
-    textarea.fill("")
-    textarea.type(message, delay=delay)
+    textarea.fill(message)
     textarea.press("Control+Enter")
 
 
