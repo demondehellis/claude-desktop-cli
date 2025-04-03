@@ -23,6 +23,4 @@ def click_dialog_button(page, button_type):
     button = page.locator(selector(button_type))
     if button.count() == 0:
         raise RuntimeError(f"Could not find button for {button_type}")
-
-    print(f"Clicking '{button_type}' button")
     button.click()
