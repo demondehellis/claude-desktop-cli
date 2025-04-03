@@ -25,17 +25,13 @@ def send_message(page, message, delay=20):
     textarea.press("Control+Enter")
 
 
-def wait_until_ready(page, timeout=None, always_allow=False):
+def wait_until_ready(page, timeout=None):
     """Wait for Claude to complete its response."""
     start_time = time.time()
     while True:
         # Check for dialogs during response
         if is_dialog_present(page):
-            if always_allow:
-                click_dialog_button(page, "allow-chat")
-            else:
-                print_dialog(page)
-                sys.exit(0)
+            break
 
         if not is_stop_button_present(page):
             break

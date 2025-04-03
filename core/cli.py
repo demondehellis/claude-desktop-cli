@@ -40,6 +40,11 @@ def parse_arguments():
         help="Timeout in seconds for response (use 0 to disable waiting)"
     )
 
+    # Watch mode
+    parser.add_argument("--watch", action="store_true",
+        help="Watch mode (wait for response and print it)"
+    )
+
     return parser.parse_args()
 
 def print_dialog(page):
